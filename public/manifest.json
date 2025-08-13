@@ -1,0 +1,82 @@
+{
+  "name": "Energy Tracker",
+  "short_name": "EnergyTracker",
+  "description": "Track your cognitive clarity and physical energy throughout the day with personalized insights and analytics",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c45e99",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["health", "lifestyle", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Quick Check-in",
+      "short_name": "Check-in",
+      "description": "Quickly log your current energy levels",
+      "url": "/?action=checkin",
+      "icons": [
+        {
+          "src": "/shortcuts/checkin-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Track Energy",
+      "short_name": "Track",
+      "description": "Log detailed energy and mood data",
+      "url": "/?action=track",
+      "icons": [
+        {
+          "src": "/shortcuts/track-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "View Analytics",
+      "short_name": "Analytics",
+      "description": "View your energy patterns and insights",
+      "url": "/?action=analytics",
+      "icons": [
+        {
+          "src": "/shortcuts/analytics-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "protocol_handlers": [],
+  "edge_side_includes": false
+}
