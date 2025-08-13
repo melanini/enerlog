@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Track your cognitive clarity and physical energy throughout the day with personalized insights and analytics." />
+    <meta name="keywords" content="energy tracking, wellness, health, productivity, cognitive clarity, mood tracking" />
+    <meta name="author" content="Energy Tracker" />
+    
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#c45e99" />
+    <meta name="msapplication-TileColor" content="#c45e99" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preload fonts -->
+    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Energy Tracker - Monitor Your Daily Energy Levels" />
+    <meta property="og:description" content="Track your cognitive clarity and physical energy throughout the day with personalized insights and analytics." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://energy-tracker.com" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Energy Tracker - Monitor Your Daily Energy Levels" />
+    <meta property="twitter:description" content="Track your cognitive clarity and physical energy throughout the day with personalized insights and analytics." />
+    <meta property="twitter:image" content="/og-image.png" />
+    
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Energy Tracker" />
+    
+    <!-- Android Chrome -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <title>Energy Tracker - Monitor Your Daily Energy Levels</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+    
+    <!-- Loading screen -->
+    <style>
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #F8F5F2 0%, #F7EEF7 25%, #FCEDE2 50%, #F7EEF7 75%, #F8F5F2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      #loading-screen.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .loading-content {
+        text-align: center;
+      }
+      
+      .loading-icon {
+        width: 64px;
+        height: 64px;
+        background: #c45e99;
+        border-radius: 50%;
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top: 2px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #111827;
+        margin-bottom: 8px;
+      }
+      
+      .loading-subtitle {
+        font-size: 14px;
+        color: #6b7280;
+      }
+    </style>
+    
+    <div id="loading-screen">
+      <div class="loading-content">
+        <div class="loading-icon">
+          <div class="loading-spinner"></div>
+        </div>
+        <div class="loading-title">Energy Tracker</div>
+        <div class="loading-subtitle">Loading your energy journey...</div>
+      </div>
+    </div>
+    
+    <script>
+      // Hide loading screen when app loads
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.classList.add('hide');
+            setTimeout(() => {
+              loadingScreen.remove();
+            }, 500);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
